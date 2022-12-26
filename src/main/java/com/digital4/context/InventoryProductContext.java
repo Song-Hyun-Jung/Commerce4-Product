@@ -11,10 +11,11 @@ import com.digital4.utils.HttpConnectionUtils;
 public class InventoryProductContext {
 	//public boolean subtractQuantity//여기서 httpUrlConnection 호출
 	public String insertInventory(long productId, String token) throws Exception {
-		String url = "8080/rest/inventory/insertInventory";
+		String targetUrl = "APIG";
+		String requestUrl = "/rest/inventory/insertInventory";
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("productId", productId);
-		String response = HttpConnectionUtils.postRequest(url, map,token);
+		String response = HttpConnectionUtils.postRequest(targetUrl, requestUrl, map,token);
 		System.out.println("postRequest:" + response);
 		return response;
 	}
